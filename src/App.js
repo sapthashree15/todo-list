@@ -9,12 +9,13 @@ function App() {
 
     function handleSubmit(e) {
         e.prevenetDefault()
-
+        
         const newTodo ={
             id: new Date().getTime(),
             text: todo,
             completed: false,
         }
+
         setTodos([...todos].concat(newTodo))
         setTodo("")
     }
@@ -22,12 +23,10 @@ function App() {
   return (
     <div className="App">
      <form onSubmit ={handleSubmit}>
-         <input type = "text" onChange={(e)=> setTodo(e.target.value)} value={todo} />
+         <input type = "text" placeholder= "Add Text Here" onChange={(e)=> setTodo(e.target.value)} value={todo} />
          <button type ="submit">Add Todo</button>
      </form>
-    {todos.map((todo) => {
-        return <div>{todo.text}</div>;
-    })}
+    {todos.map((todo) => <div>{todo.text}</div>)}
     </div>
   );
 }
