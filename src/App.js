@@ -25,6 +25,9 @@ function App() {
          <input type = "text" onChange={(e)=> setTodo(e.target.value)} value={todo} />
          <button type ="submit">Add Todo</button>
      </form>
+    {todos.map((todo) => {
+        return <div>{todo.text}</div>;
+    })}
     </div>
   );
 }
