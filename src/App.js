@@ -23,20 +23,28 @@ const App = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-  const newTodo = {
+    console.log("...."+ todo + "....");
+
+    const newTodo = {
       id: new Date().getTime(),
-      text: todo,
+      text: todo.trim(),
       completed: false,
     };
-  
-      if (todo.length > 0) {
+    
+    console.log("...."+ newTodo.text + "....");
+
+      if (newTodo.text.length > 0 ) {
         //alert("Ok");
         setTodos([...todos].concat(newTodo));
         setTodo("");
+    
     } else {
+        
         alert("Enter Valid Items");
+        
     }
   }
+  
 
   function deleteTodo(id) {
     let updatedTodos = [...todos].filter((todo) => todo.id !== id);
