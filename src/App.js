@@ -23,13 +23,19 @@ const App = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const newTodo = {
+  const newTodo = {
       id: new Date().getTime(),
       text: todo,
       completed: false,
     };
-    setTodos([...todos].concat(newTodo));
-    setTodo("");
+  
+      if (todo.length > 0) {
+        //alert("Ok");
+        setTodos([...todos].concat(newTodo));
+        setTodo("");
+    } else {
+        alert("Enter Valid Items");
+    }
   }
 
   function deleteTodo(id) {
