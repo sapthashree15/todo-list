@@ -41,6 +41,7 @@ const App = () => {
     } else {
         
         alert("Enter Valid Items");
+        setTodo("");
         
     }
   }
